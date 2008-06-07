@@ -1,0 +1,26 @@
+CompositionGenerator
+====================
+
+Generates a composition model and a convenience method for mixing it into your models.
+
+Example
+=======
+
+./script/generate composition address street city state zip_code
+
+class Person < ActiveRecord::Base
+  has_address
+end
+
+p = Person.new
+
+p.address = Address.new('1234 S. Main St.', 'Anytown', 'CA', 91234)
+
+
+p.address.street
+# => "1234 S. Main St."
+
+p.street
+# => "1234 S. Main St."
+
+Copyright (c) 2008 Chris Eppstein, released under the MIT license

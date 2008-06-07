@@ -1,0 +1,12 @@
+Description:
+    Generates a class, library module, and initializer that provides simple
+    composition over record attributes that can be mixed into your models like so:
+    
+    class Foo < ActiveRecord::Base
+      has_bar
+      has_bar :name => :baz
+      has_bar :mapping => [ %w(address_street street), %w(address_city city) ]
+    end
+
+Example:
+    ./script/generate composition bar attribute...
